@@ -4,8 +4,16 @@ const cors = require('cors');
 
 const app = express();
 
+app.get('/', function(req, res) {
+    res.sendFile(path.join(__dirname, '../public/index.html'))
+});
 
-const port = process.env.PORT || 4545
+app.get('/css', (req, res) => {
+    res.sendFile(path.join(__dirname, '../public/index.css'))
+});
+
+
+const port = process.env.PORT || 4005
 app.listen(port, () => {
-    console.log(`Jammig on ${port}`);
+    console.log(`Jammin on ${port}`);
 });
